@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Кредит </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    </style>
+    <div th:insert = "bloks\style :: style"></div>
+</head>
+<body>
+<div class="container">
+    <div th:insert = "bloks\head :: head"></div>
+    <h1>Редактирование кредита</h1>
+    <div th:each = "eli : ${credit}" >
+    <form  method="post">
+        <input type="text" th:value ="${eli.name_credit}" name="name_credit" placeholder="Введите название">
+        <input type="text" th:value ="${eli.lim}" name="lim" placeholder="Введите лимит по кредиту">
+        <input type="text" th:value ="${eli.procent}" name="procent" placeholder="Введите процентную ставку">
+        <button type="submit" class="knopka">Обновить</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Клиент </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    </style>
+    <div th:insert = "bloks\style :: style"></div>
+</head>
+<body>
+<div class="container">
+    <div th:insert = "bloks\head :: head"></div>
+    <div class="cont">
+    <a href="/client/add" class="knopka"><h2>Добавить клиента</h2></a>
+    </div>
+    <div th:each = "ul : ${client}" >
+        <h4 th:text = "'ФИО: ' +${ul.fio_client}"></h4>
+        <p th:text = "'Номер телефона: ' +${ul.nomer}"/>
+        <p th:text = "'Почта: ' +${ul.mail}"/>
+        <p th:text = "'Паспорт: ' +${ul.pasport}"/>
+        <a th:href = "'/client/' + ${ul.id} + '/edit'" class="knopka">Редактировать</a>
+        <form th:action="'/client/' + ${ul.id} + '/remove'" method="post">
+            <button type="submit" class="knopka" >Удалить</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

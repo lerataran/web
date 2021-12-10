@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Кредит </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    </style>
+    <div th:insert = "bloks\style :: style"></div>
+</head>
+<body>
+<div class="container">
+    <div th:insert = "bloks\head :: head"></div>
+    <div class="cont">
+    <a href="/credit/add" class="knopka"><h2>Добавить кредит</h2></a>
+    </div>
+    <div th:each = "eli : ${credit}" >
+        <h4 th:text = "${eli.name_credit}"></h4>
+        <p th:text = "'Лимит по кредиту: ' + ${eli.lim} + ' рублей' "/>
+        <p th:text = "'Процентная ставка: '+${eli.procent} + '%'"/>
+        <a th:href = "'/credit/' + ${eli.id} + '/edit'" class="knopka">Редактировать</a>
+        <form th:action="'/credit/' + ${eli.id} + '/remove'" method="post">
+            <button type="submit" class="knopka" >Удалить</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

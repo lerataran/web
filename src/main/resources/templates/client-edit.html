@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Клиент </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    </style>
+    <div th:insert = "bloks\style :: style"></div>
+</head>
+<body>
+<div class="container">
+    <div th:insert = "bloks\head :: head">
+    </div>
+    <h1>Редактирование клиента</h1>
+    <div th:each = "el : ${client}" >
+    <form  method="post">
+        <input type="text" th:value ="${el.fio_client}" name="fio_client" placeholder="Введите ФИО">
+        <input type="text" th:value ="${el.mail}" name="mail" placeholder="Введите почту">
+        <input type="text" th:value ="${el.nomer}" name="nomer" placeholder="Введите номер телефона(6-цифр)">
+        <input type="text" th:value ="${el.pasport}" name="pasport" placeholder="Введите номер паспорта(6-цифр)">
+        <button type="submit" class="knopka">Обновить</button>
+    </form>
+</div>
+</body>
+</html>

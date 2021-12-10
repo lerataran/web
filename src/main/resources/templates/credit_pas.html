@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Кредитное предложение</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    </style>
+    <div th:insert = "bloks\style :: style"></div>
+</head>
+<body>
+<div class="container">
+    <div th:insert = "bloks\head :: head"></div>
+    <div class="cont">
+    <a href="/credit_pas/add" class="knopka"><h2>Добавить кредитное предложение</h2></a>
+    </div>
+    <div th:each = "al : ${predlozenies}">
+        <h4 th:text = "'ФИО: ' + ${al.fio}"></h4>
+        <p th:text = "'Название кредита: ' +${al.name}"/>
+        <p th:text = "'Сумма кредита: ' + ${al.sumCred} + ' рублей '"/>
+        <a th:href = "'/credit_pas/' + ${al.id}" class="knopka">Детальнее</a>
+    </div>
+</div>
+</body>
+</html>

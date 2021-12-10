@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Кредит </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    </style>
+    <div th:insert = "bloks\style :: style"></div>
+</head>
+<body>
+<div class="container">
+    <div th:insert = "bloks\head :: head"></div>
+    <h1>Добавление кредита</h1>
+    <form action="/credit/add" method="post">
+        <p>Введите название:</p>
+        <input type="text" name="name_credit" placeholder="Введите название">
+        <p>Введите лимит по кредиту:</p>
+        <input type="text" name="lim" placeholder="Введите лимит по кредиту">
+        <p>Введите процентную ставку:</p>
+        <input type="text" name="procent" placeholder="Введите процентную ставку">
+        <br><button type="submit" class="knopka">Добавить</button>
+    </form>
+</div>
+</body>
+</html>

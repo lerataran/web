@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Кредитное предложение</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    </style>
+    <div th:insert = "bloks\style :: style"></div>
+</head>
+<body>
+<div class="container">
+    <div th:insert = "bloks\head :: head"></div>
+    <h1>Редактирование клиента</h1>
+    <div th:each = "al : ${predl}" >
+    <form method="post">
+        <input type="text" th:value ="${al.fio}" name="fio" placeholder="Введите ФИО">
+        <input type="text" th:value ="${al.name}" name="name" placeholder="Введите название">
+        <input type="date" th:value ="${al.date}" name="date" placeholder="Введите дату платежа">
+        <input type="text" th:value ="${al.sumCred}" name="sumCred" placeholder="Введите сумму кредита">
+        <input type="text" th:value ="${al.sumPla}" name="sumPla" placeholder="Введите сумму платежа">
+        <input type="text" th:value ="${al.sumTelo}" name="sumTelo" placeholder="Введите сумму гашения тела кредита">
+        <input type="text" th:value ="${al.sumPros}" name="sumPros" placeholder="Введите сумму гашения процентов">
+        <button type="submit" class="knopka">Обновить</button>
+    </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Клиент </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    </style>
+    <div th:insert = "bloks\style :: style"></div>
+</head>
+<body>
+<div class="container">
+    <div th:insert = "bloks\head :: head">
+        <a href="/client/add" class="knopka">Добавить клиента</a>
+    </div>
+    <h1>Добавление клиента</h1>
+    <form action="/client/add" method="post">
+        <p>Введите ФИО:</p>
+        <input type="text" name="fio_client" placeholder="Введите ФИО">
+        <p>Введите почту:</p>
+        <input type="text" name="mail" placeholder="Введите почту">
+        <p>Введите номер телефона(6-цифр):</p>
+        <input type="text" name="nomer" placeholder="Введите номер телефона">
+        <p>Введите номер паспорта(6-цифр):</p>
+        <input type="text" name="pasport" placeholder="Введите номер паспорта">
+        <br><button type="submit" class="knopka">Добавить</button>
+    </form>
+</div>
+</body>
+</html>

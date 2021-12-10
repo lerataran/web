@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Банк</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    </style>
+    <div th:insert = "bloks\style :: style"></div>
+</head>
+<body>
+<div class="container">
+    <div th:insert = "bloks\head :: head"></div>
+    <div>
+    <div th:each = "el : ${predloz}" class="after after-info mt-2">
+         <p th:text = "'ФИО: ' + ${el.fio}"></p>
+        <p th:text = "'Название: ' + ${el.name}"></p>
+    </div>
+</div>
+</div>
+</body>
+</html>
